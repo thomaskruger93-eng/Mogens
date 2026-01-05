@@ -13,11 +13,11 @@ def check_password():
             st.session_state["password_correct"] = False
 
     if "password_correct" not in st.session_state:
-        st.title("Garage Coffee Roaster software")
+        st.title("Garage Coffee")
         st.text_input("Indtast kodeord for at starte", type="password", on_change=password_entered, key="password")
         return False
     elif not st.session_state["password_correct"]:
-        st.title("Garage coffee")
+        st.title("Måvens' Risteri")
         st.text_input("Indtast kodeord for at starte", type="password", on_change=password_entered, key="password")
         st.error("❌ Forkert kodeord")
         return False
@@ -29,7 +29,7 @@ if check_password():
     if 'library' not in st.session_state:
         st.session_state.library = {}
 
-    st.title("☕ Garage Coffee roasting simulator v9.0")
+    st.title("☕ Måvens' Præcisions-simulator v9.0")
 
     # --- 2. SIDEBAR: INDSTILLINGER ---
     st.sidebar.header("Riste-indstillinger")
@@ -136,4 +136,3 @@ if check_password():
                 if not (r['dtr'] < 12 or r['total'] > 14): st.success("✅ Profilen ser balanceret ud.")
     else:
         st.info("Indtast password og opret en rist for at starte.")
-
